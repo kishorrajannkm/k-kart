@@ -1,0 +1,34 @@
+{
+  "NAV_LINK": {
+    "HOME": "Home",
+    "USER": "User",
+    "CART": "Cart",
+    "MY_PROFILE": "My Profile",
+    "WISHLIST": "Wishlist",
+    "ITEMS": "Items",
+    "LOGIN": "Connexion"
+  },
+  "HOME": {
+    "TITLE": "Bonjour Angular avec ngx-translate !",
+    "SELECT": "Changer la langue"
+  },
+  "LOGIN": {
+    "TITLE": "Connexion",
+    "FORM": {
+      "LABEL": {
+        "EMAIL": "E-mail",
+        "PASSWORD": "Mot de passe"
+      }
+    }
+  },
+  "USER": {
+    "DASHBOARD": {
+      "CUSTOMER_REGITRATION_BUTTON": "Enregistrement du client"
+    },
+    "CUSTOMER": {
+      "REGISTRATION": {
+        "TITLE": "Enregistrer le client"
+      }
+    }
+  }
+}

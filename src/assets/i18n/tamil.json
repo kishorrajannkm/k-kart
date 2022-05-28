@@ -1,0 +1,34 @@
+{
+  "NAV_LINK": {
+    "HOME": "வீடு",
+    "USER": "பயனர்",
+    "CART": "வண்டி",
+    "MY_PROFILE": "என் சுயவிவரம்",
+    "WISHLIST": "விருப்பப்பட்டியல்",
+    "ITEMS": "பொருட்கள்",
+    "LOGIN": "உள்நுழைய"
+  },
+  "HOME": {
+    "TITLE": "Bonjour Angular avec ngx-translate !",
+    "SELECT": "Changer la langue"
+  },
+  "LOGIN": {
+    "TITLE": "உள்நுழைய",
+    "FORM": {
+      "LABEL": {
+        "EMAIL": "மின்னஞ்சல்",
+        "PASSWORD": "கடவுச்சொல்"
+      }
+    }
+  },
+  "USER": {
+    "DASHBOARD": {
+      "CUSTOMER_REGITRATION_BUTTON": "வாடிக்கையாளர் பதிவு"
+    },
+    "CUSTOMER": {
+      "REGISTRATION": {
+        "TITLE": "வாடிக்கையாளர் பதிவு"
+      }
+    }
+  }
+}

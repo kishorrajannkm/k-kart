@@ -1,0 +1,47 @@
+<mat-card class='registration-wrapper'>
+    <mat-card-content>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <h2>{{ 'USER.CUSTOMER.REGISTRATION.TITLE' | translate }}</h2>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Username" formControlName="username" required>
+          <mat-error class="text-danger" *ngIf="(registerFormControl.username.touched) && registerFormControl.username.errors?.required">
+              User Name is required
+            </mat-error>
+            <mat-error class="text-danger" *ngIf="registerFormControl.username.touched && registerFormControl.username.errors?.userNameNotAvailable">
+              User Name is not available
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
+          <mat-error>
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required>
+            <!-- <mat-error>
+              Please provide a valid confirm password
+            </mat-error> -->
+            <mat-error *ngIf="(registerFormControl.confirmPassword.dirty || registerFormControl.confirmPassword.pristine || registerFormControl.confirmPassword.touched) && registerFormControl.confirmPassword.errors?.passwordMismatch">
+                Passwords does not match
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+            <input matInput type="text" placeholder="First Name" formControlName="firstName" required>
+            <mat-error>
+              Please provide a valid First Name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+            <input matInput type="text" placeholder="Last Name" formControlName="lastName" required>
+            <mat-error>
+              Please provide a valid Last Name
+            </mat-error>
+        </mat-form-field>
+        <!-- {{ registerFormControl.password.getError('passwordMismatch') }} -->
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Register</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+</mat-card>

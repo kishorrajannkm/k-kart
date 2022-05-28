@@ -1,0 +1,27 @@
+<h3 class='page-header'>Items for sale</h3>
+<div class='search-field-wrapper'>
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" [(ngModel)]="searchMobileText">
+        <button *ngIf="searchMobileText" matSuffix mat-icon-button aria-label="Clear" (click)="searchMobileText=''">
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div *ngFor='let item of items | searchText: searchMobileText' class='item-card'>
+    <mat-card>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-content (click)='showItemDetails(item);'>
+            <div>Price: Rs.{{ item.cost }}</div>
+            <div>{{ item.countLeft >= 1 ? 'Items left: '+item.countLeft : 'Out of Stock' }}</div>
+            <div>{{ item.countLeft >= 1 ? 'Delivery in '+item.deliveryInDays+' days': 'Not Deliverable' }}</div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <!-- <button (click)='addOrRemoveWishListItems(item);' [ngClass]="item.isAddedToWishlist ? 'selected' : 'not-selected'" color='warn' mat-icon-button>
+                <mat-icon>favorite</mat-icon>
+            </button> -->
+            <button mat-raised-button [disabled]='item.countLeft<=0' mat-button>Add to Cart</button>
+            <button mat-raised-button [disabled]='item.countLeft<=0' color='primary' mat-button>Buy Now</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

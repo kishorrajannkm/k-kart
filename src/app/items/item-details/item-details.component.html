@@ -1,0 +1,17 @@
+<div class='item-card'>
+    <mat-card>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-content>
+            <div>Price: Rs.{{ item.cost }}</div>
+            <div>{{ item.countLeft >= 1 ? 'Items left: '+item.countLeft : 'Out of Stock' }}</div>
+            <div>{{ item.countLeft >= 1 ? 'Delivery in '+item.deliveryInDays+' days': 'Not Deliverable' }}</div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button (click)='addOrRemoveWishListItems(item);' [ngClass]="item.isAddedToWishlist ? 'selected' : 'not-selected'" color='warn' mat-icon-button>
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-raised-button [disabled]='item.countLeft<=0' mat-button>Add to Cart</button>
+            <button mat-raised-button [disabled]='item.countLeft<=0' color='primary' mat-button>Buy Now</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

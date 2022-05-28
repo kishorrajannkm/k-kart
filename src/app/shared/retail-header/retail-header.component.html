@@ -1,0 +1,16 @@
+<div class='menu-header-wrapper'>
+    <button mat-button [matMenuTriggerFor]="belowMenu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+        <a [routerLink]="link.link" *ngFor="let link of navLinks" mat-menu-item>{{ link.label | translate }}</a>
+    </mat-menu>
+    <div *ngIf='loginService.userLoggedInData.loggedIn'>
+        <button mat-icon-button routerLink='wishlist'>
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button (click)='logout();'>
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+</div>

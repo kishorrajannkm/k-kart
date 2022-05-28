@@ -1,0 +1,34 @@
+<div>
+    <!-- <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+            {{ link.label | translate }}
+        </a>
+    </nav> -->
+    <div>
+        <app-retail-header></app-retail-header>
+    </div>
+    <!-- <div>
+        <h2>{{ 'HOME.TITLE' | translate }}</h2>
+        <label>
+        {{ 'HOME.SELECT' | translate }}
+        <select #langSelect (change)="translate.use(langSelect.value)">
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+        </label>
+    </div> -->
+    <!-- Search: <input type='text' [(ngModel)]="searchCountryText" /> -->
+    <!-- <button (click)='triggerVal();'>Trigger Value</button>
+    <table>
+        <tr>
+            <th>Country Name</th>
+            <th>Country Code</th>
+        </tr>
+        <tr *ngFor='let country of countryList | searchText: searchCountryText'>
+            <td>{{ country.name }}</td>
+            <td>{{ country.code }}</td>
+        </tr>
+    </table> -->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
